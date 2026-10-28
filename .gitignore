@@ -9,6 +9,7 @@
 .idea/
 *.csproj
 *.sln
+*.slnx
 !Tests/**/*.csproj
 *.user
 *.pidb

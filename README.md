@@ -1,19 +1,21 @@
 # Zero-G Cargo
 
-An Android-first, offline path-drawing puzzle in **Unity 2022.3 LTS**. Draw a cargo shuttle's route, anticipate its momentum, and guide it to the bay of the same colour.
+An Android-first, offline path-drawing puzzle in **Unity 6.6 (6000.6.7f1)**. Draw a cargo shuttle's route, anticipate its momentum, and guide it to the bay of the same colour.
 
-This is the **first development prototype (0.1.0)**, not the 50-level release. Three tutorial deliveries exercise drawing, inertia, braking, meteorite collisions, recovery, ghost hints and local progress. Ads and analytics are absent, so no credentials or backend are needed.
+This is the **first development prototype (0.1.1)**, not the 50-level release. Three tutorial deliveries exercise drawing, inertia, braking, meteorite collisions, recovery, ghost hints and local progress. Ads and analytics are absent, so no credentials or backend are needed.
 
 ## Open on your laptop
 
 1. Clone this repository (or download and extract the source), then open **Unity Hub → Add → Add project from disk** and select the repository root—the folder containing `Assets`, `Packages` and `ProjectSettings`.
-2. Use **Unity 2022.3.62f1**, or a compatible 2022.3 LTS patch. Install it through Hub if your laptop has another major version. Allow Package Manager to restore URP 14.0.11, TextMeshPro 3.0.6 and uGUI.
-3. Preparation runs on first import. Also run **Zero-G Cargo → Prepare prototype** once. This creates the 2D URP renderer/pipeline and unlit station material, imports the bundled TMP essentials, registers four scenes, and sets portrait Android/ARM64/IL2CPP defaults. It does not overwrite level or inertia assets.
+2. Use **Unity 6.6 (6000.6.7f1)**, matching the Recommended release in your Hub screenshot. In Hub, select **Installs → Install Editor → Unity 6.6 → Install** if needed. Allow Package Manager to restore **URP 17.5.0** and **uGUI 2.6.0**, which includes TextMeshPro. Do not install the old standalone TextMeshPro package.
+3. Preparation runs on first import. Also run **Zero-G Cargo → Prepare prototype** once. This creates the 2D URP renderer/pipeline and unlit station material, imports the bundled TMP essentials, registers four scenes, and sets portrait Android/ARM64/IL2CPP defaults and selects the legacy Input Manager used by this prototype. If preparation logs an input-handler change, restart Unity before Play. It does not overwrite level or inertia assets.
 4. Open `Assets/_Project/Scenes/Boot/Boot.unity`. Set the Game view to **9:16 portrait**, then press **Play**.
 5. Click **Begin shift**. Drag from the coloured triangle to the centre of the hexagonal bay, then release. The shuttle accelerates and retains momentum. A short path can be continued from its new resting position. Hitting the grey meteorite causes a spin and return; after two collisions a guide appears for three seconds.
 6. Finish a delivery to unlock the next. The third route needs a counter-arc around the meteorite. Use **II** or **Escape** to pause. Settings, privacy, restart, level select and return to menu are available.
 
 Preparation generates normal Unity assets/settings; review and commit those after a successful local import. Keep the generated `.meta` files. The cloud authoring environment did not contain a licensed Unity editor, so **Unity compilation, rendering and Android builds have not yet been verified**. See [validation](docs/VALIDATION.md) for the precise evidence and laptop checks.
+
+Upgrading an existing laptop checkout? Follow [the Unity 6.6 migration steps](docs/UNITY_6_UPGRADE.md) before opening it.
 
 ## Test the simulation without Unity
 
@@ -27,7 +29,7 @@ On Linux/macOS, `./scripts/test-core.sh` runs the same checks. The console runne
 
 ## Android development build
 
-In Unity Hub, install **Android Build Support**, including **Android SDK & NDK Tools** and **OpenJDK**, for this editor version. Switch the active platform to Android in **File → Build Settings**, then run **Zero-G Cargo → Build Android development APK**. Output: `Builds/ZeroGCargo-dev.apk` (debug signing; ignored by Git). Install on a USB-debugging-enabled device and follow the smoke checks in [validation](docs/VALIDATION.md).
+In Unity Hub, install **Android Build Support**, including **Android SDK & NDK Tools** and **OpenJDK**, for this editor version. Switch the active platform to Android in **File → Build Profiles**, then run **Zero-G Cargo → Build Android development APK**. Output: `Builds/ZeroGCargo-dev.apk` (debug signing; ignored by Git). Install on a USB-debugging-enabled device and follow the smoke checks in [validation](docs/VALIDATION.md).
 
 This development APK is not a signed Google Play AAB. Release signing, Play Console setup and performance validation remain future work. Never commit keystores or passwords.
 

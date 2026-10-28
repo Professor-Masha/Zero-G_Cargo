@@ -10,7 +10,7 @@ These are core and source-syntax checks, not a Unity compilation. The three rout
 
 ## Required laptop smoke checks (not yet run)
 
-1. Open in Unity 2022.3 LTS and run **Zero-G Cargo → Prepare prototype** twice. Confirm the Console has no compiler/import errors, the second run preserves existing levels/configuration, the 2D URP asset is assigned and TMP default font assets are present.
+1. Open in Unity 6.6 (6000.6.7f1) and run **Zero-G Cargo → Prepare prototype** twice. Confirm the Console has no compiler/import errors, the second run preserves existing levels/configuration, the 2D URP asset is assigned and TMP default font assets are present. Confirm URP 17.5.0 and uGUI 2.6.0 resolve with no standalone TMP dependency. If setup changes Active Input Handling, restart the editor and confirm mouse/touch and UI work.
 2. Open Boot, use portrait 9:16 Game view and press Play. Verify title, text, buttons, coloured triangle, hexagonal bay and grey meteorite render correctly. The scene should advance to MainMenu.
 3. Draw away from the shuttle: no route. Tap the shuttle without dragging: no launch. Draw farther than six world units: the route stops extending. Release: one flight starts. A second finger must not replace the active touch on device.
 4. Complete all three levels; the third route passes below/right of the central meteorite. Confirm momentum and wide turns are visible. Check that a stopped short route can continue from its current position. At a matching bay, slowing yields one dock and one completion.

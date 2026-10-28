@@ -4,7 +4,7 @@ The supplied documents describe the intended full Android release and an approxi
 
 ## Implemented in source
 
-- Unity 2022.3 LTS project, pinned direct packages, stable asset GUIDs and four registered scenes.
+- Unity 6.6 (6000.6.7f1) project, pinned direct packages, stable asset GUIDs and four registered scenes.
 - ScriptableObject configuration with the specified inertia defaults: acceleration 8, speed 6, drag 0.4, braking 12, drift 0.15, maximum route length 6.
 - Single-pointer touch/mouse drawing with pickup radius, UI rejection, sample spacing, fixed storage, route budget clipping and one completion event. LineRenderer corner rounding supplies visual smoothing; authored physics uses the sampled polyline.
 - Engine-independent manual inertia at 60 fixed steps/second. Lookahead preserves velocity through turns. Free-flight routes drift beyond their endpoint; routes ending within a bay's capture radius engage a steering/braking controller for safe arrival. No Rigidbody2D movement.
@@ -22,6 +22,8 @@ The persistent `GameManager` composes services. `PathDrawer.OnPathComplete` feed
 The full 50-level game, multiple simultaneous shuttles, barriers, wells, chain deliveries, timer/fail-screen flow, level-authoring editor, particles, full ambient audio/music/haptics, reset-save UI, animation polish and final fonts/art are future work. Early-level star ratings currently use collision count; later timed ratings require the timer milestone. No fake SDK adapters, ad buttons, Firebase calls or production identifiers are included.
 
 The first import prepares URP/TMP and Android settings on the laptop. Unity package resolution/lock generation, Unity API compilation, scene rendering, touch input, lifecycle behavior and Android builds require local verification. This environment can test the pure core and source syntax only. A 60-FPS target is configured; no device performance or zero-allocation claim is made.
+
+The original DOCX specifications retain their historical Unity 2022.3 requirements. The current editor/package target is documented in [the Unity 6.6 migration](UNITY_6_UPGRADE.md).
 
 ## Next milestones
 

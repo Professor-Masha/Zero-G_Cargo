@@ -1,6 +1,8 @@
 using System.IO;
 using TMPro;
+using TMPro.EditorUtilities;
 using UnityEditor;
+using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEditor.Rendering;
 using UnityEngine;
@@ -56,27 +58,40 @@ namespace ZeroGCargo.Editor
             QualitySettings.renderPipeline = pipeline;
             if (Resources.Load<TMP_Settings>("TMP Settings") == null)
             {
-                string package = Path.GetFullPath("Packages/com.unity.textmeshpro/Package Resources/TMP Essential Resources.unitypackage");
-                // Package paths may be virtual; resolve the installed package's real location.
-                var info = UnityEditor.PackageManager.PackageInfo.FindForAssembly(typeof(TMP_Text).Assembly);
-                if (info != null) package = Path.Combine(info.resolvedPath, "Package Resources/TMP Essential Resources.unitypackage");
-                if (!File.Exists(package)) throw new FileNotFoundException("TextMeshPro essentials package not found", package);
-                AssetDatabase.ImportPackage(package, false);
+                // Unity 6 ships TMP inside uGUI; use TMP's own package locator.
+                string package = Path.Combine(TMP_EditorUtility.packageFullPath, "Package Resources/TMP Essential Resources.unitypackage");
+                if (!File.Exists(package)) throw new FileNotFoundException("TextMeshPro essentials package not found in the installed uGUI package", package);
+                UnityEditor.AssetPackage.Package.Import(package, false);
             }
             var sceneSettings = new EditorBuildSettingsScene[Scenes.Length];
             for (int i = 0; i < Scenes.Length; i++) sceneSettings[i] = new EditorBuildSettingsScene(Scenes[i], true);
             EditorBuildSettings.scenes = sceneSettings;
             PlayerSettings.companyName = "Professor Masha"; PlayerSettings.productName = "Zero-G Cargo";
-            PlayerSettings.bundleVersion = "0.1.0";
-            PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Android, "com.professormasha.zerogcargo");
+            PlayerSettings.bundleVersion = "0.1.1";
+            PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.professormasha.zerogcargo");
             PlayerSettings.defaultInterfaceOrientation = UIOrientation.Portrait;
             PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel24;
             PlayerSettings.Android.targetSdkVersion = AndroidSdkVersions.AndroidApiLevelAuto;
             PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
-            PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
+            PlayerSettings.SetScriptingBackend(NamedBuildTarget.Android, ScriptingImplementation.IL2CPP);
             PlayerSettings.colorSpace = ColorSpace.Linear;
+            ConfigureLegacyInput();
             AssetDatabase.SaveAssets(); AssetDatabase.Refresh();
             Debug.Log("Prototype prepared. Open Boot and press Play. Android requires Hub's Android Build Support, SDK/NDK and OpenJDK.");
+        }
+        private static void ConfigureLegacyInput()
+        {
+            // PathDrawer and StandaloneInputModule use the legacy Input Manager.
+            // Unity's Player Settings inspector stores this as 0=legacy, 1=new, 2=both.
+            Object[] assets = AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/ProjectSettings.asset");
+            if (assets.Length == 0) throw new System.InvalidOperationException("Unity Player Settings are unavailable; reopen the project and run preparation again.");
+            var settings = new SerializedObject(assets[0]);
+            SerializedProperty input = settings.FindProperty("activeInputHandler");
+            if (input == null) throw new System.InvalidOperationException("Cannot configure Active Input Handling. Set it to Input Manager (Old) in Player Settings.");
+            if (input.intValue == 0) return;
+            input.intValue = 0;
+            settings.ApplyModifiedPropertiesWithoutUndo();
+            Debug.LogWarning("Active Input Handling changed to Input Manager (Old). Restart Unity before pressing Play or building.");
         }
         /// <summary>Builds a development APK using Android debug signing for a local device smoke test.</summary>
         [MenuItem("Zero-G Cargo/Build Android development APK")]
