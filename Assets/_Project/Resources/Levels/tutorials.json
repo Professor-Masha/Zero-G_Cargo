@@ -1,0 +1,7 @@
+{
+  "levels": [
+    {"id":1,"title":"First shift","cargo":0,"spawn":{"x":-1.7,"y":-1.6},"bay":{"x":1.6,"y":1.4},"meteorite":{"x":1.7,"y":-1.5},"radius":0.42,"route":[{"x":-1.7,"y":-1.6},{"x":1.6,"y":1.4}]},
+    {"id":2,"title":"Mind the momentum","cargo":1,"spawn":{"x":-1.8,"y":-1.5},"bay":{"x":1.7,"y":1.5},"meteorite":{"x":-1.1,"y":1.0},"radius":0.48,"route":[{"x":-1.8,"y":-1.5},{"x":1.7,"y":1.5}]},
+    {"id":3,"title":"The long way around","cargo":2,"spawn":{"x":-1.8,"y":-1.5},"bay":{"x":1.7,"y":1.5},"meteorite":{"x":0.0,"y":0.0},"radius":0.48,"route":[{"x":-1.8,"y":-1.5},{"x":-0.3,"y":-1.5},{"x":1.0,"y":-0.5},{"x":1.7,"y":1.5}]}
+  ]
+}
