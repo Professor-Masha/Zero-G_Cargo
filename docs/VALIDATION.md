@@ -21,3 +21,9 @@ These are core and source-syntax checks, not a Unity compilation. The three rout
 9. Use Unity Profiler on device before asserting any performance targets. Android APK/AAB generation, 60 FPS, startup time, memory, app size and three-device-tier testing are currently unverified.
 
 No AdMob/Firebase SDK is installed in this slice. Ad, consent, privacy-site hosting and analytics test matrices remain unrun and cannot be inferred from passing core checks.
+
+## Follow-up from laptop screenshots
+
+The laptop confirmed that Unity imports the project and renders gameplay shapes and the pause menu. A wide Free Aspect Game view exposed clipped headings and instructions. The canvas now uses Expand scaling to retain the full 720×1280 reference area and refreshes safe-area bounds on resize. Clicking other Editor panels no longer triggers the device focus-loss pause behavior.
+
+Recheck Main Menu, gameplay instructions, Pause, Settings, Privacy and Win at 9:16, 16:9 and a resized Game view. Confirm no labels/buttons clip and Resume returns to the board. On Android, background/focus loss must still pause. These follow-up visual checks have not been executed in the cloud.

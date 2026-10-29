@@ -59,6 +59,7 @@ namespace ZeroGCargo.Gameplay
         private void Update()
         {
             if (!initialized) return;
+            hud.UpdateSafeArea();
             if (Input.GetKeyDown(KeyCode.Escape)) Back();
             if (screen != GameScreen.Gameplay) return;
             drawer.Tick(level.Position, level.CanDraw); level.DrawPath(drawer.Path);
@@ -118,7 +119,11 @@ namespace ZeroGCargo.Gameplay
             save.Save(); if (screen == GameScreen.Gameplay) Navigate(GameScreen.Pause);
         }
         private void OnApplicationFocus(bool focused)
-        { if (!focused) OnApplicationPause(true); }
+        {
+            // Clicking another Editor panel should not replace gameplay with the pause menu.
+            // On devices, losing app focus must still freeze the simulation.
+            if (!Application.isEditor && !focused) OnApplicationPause(true);
+        }
         private void OnDestroy()
         {
             if (instance != this) return;

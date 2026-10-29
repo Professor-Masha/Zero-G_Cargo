@@ -23,6 +23,9 @@ namespace ZeroGCargo.UI
         private readonly TMP_Text soundLabel;
         private readonly Button next;
         private readonly TMP_Text toast;
+        private Rect lastSafeArea;
+        private int lastScreenWidth;
+        private int lastScreenHeight;
         /// <summary>Navigation requested by a visible button.</summary>
         public event Action<GameScreen> OnNavigate;
         /// <summary>Level launch requested by a visible unlocked tile.</summary>
@@ -38,7 +41,9 @@ namespace ZeroGCargo.UI
             UnityEngine.Object.DontDestroyOnLoad(root);
             root.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
             var scaler = root.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-            scaler.referenceResolution = new Vector2(720, 1280); scaler.matchWidthOrHeight = 0.5f;
+            scaler.referenceResolution = new Vector2(720, 1280);
+            // Keep the full portrait layout visible even in a wide Editor Game view.
+            scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.Expand;
             safeArea = new GameObject("Safe area", typeof(RectTransform)).GetComponent<RectTransform>(); safeArea.SetParent(root.transform, false);
             UpdateSafeArea();
             foreach (GameScreen screen in Enum.GetValues(typeof(GameScreen)))
@@ -124,7 +129,10 @@ namespace ZeroGCargo.UI
         /// <summary>Applies native screen cutouts plus design-system padding.</summary>
         public void UpdateSafeArea()
         {
+            if (Screen.width <= 0 || Screen.height <= 0) return;
             Rect area = Screen.safeArea;
+            if (area == lastSafeArea && Screen.width == lastScreenWidth && Screen.height == lastScreenHeight) return;
+            lastSafeArea = area; lastScreenWidth = Screen.width; lastScreenHeight = Screen.height;
             safeArea.anchorMin = new Vector2(area.xMin / Screen.width, area.yMin / Screen.height);
             safeArea.anchorMax = new Vector2(area.xMax / Screen.width, area.yMax / Screen.height);
             safeArea.offsetMin = new Vector2(24, 24); safeArea.offsetMax = new Vector2(-24, -24);
