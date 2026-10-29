@@ -12,6 +12,7 @@
     <Compile Include="Program.cs" />
     <Reference Include="Microsoft.CodeAnalysis"><HintPath>$(MSBuildSDKsPath)/../Roslyn/bincore/Microsoft.CodeAnalysis.dll</HintPath></Reference>
     <Reference Include="Microsoft.CodeAnalysis.CSharp"><HintPath>$(MSBuildSDKsPath)/../Roslyn/bincore/Microsoft.CodeAnalysis.CSharp.dll</HintPath></Reference>
+    <None Include="../../Assets/_Project/Resources/Levels/campaign.json" Link="campaign.json" CopyToOutputDirectory="PreserveNewest" />
     <None Include="../../Assets/_Project/Resources/Levels/tutorials.json" Link="tutorials.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

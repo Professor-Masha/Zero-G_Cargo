@@ -9,7 +9,7 @@ void Check(bool condition, string message = "Assertion failed") { if (!condition
 void Near(float actual, float expected, float tolerance = 0.0001f) => Check(Math.Abs(actual - expected) <= tolerance, $"Expected {expected} ± {tolerance}, got {actual}");
 var cfg = new FlightSettings(8, 6, 0.4f, 12, 0.15f, 0.3f);
 PathData Route(params Float2[] points) { var p = new PathData(256); foreach (var v in points) p.Add(v, 6, 0); return p; }
-var options = new JsonSerializerOptions { IncludeFields = true };
+var options = new JsonSerializerOptions { IncludeFields = true, IgnoreReadOnlyProperties = true };
 SaveData Decode(string text)
 {
     try { return JsonSerializer.Deserialize<SaveData>(text, options); }
@@ -98,11 +98,84 @@ Test("every Unity source parses as C# 9", () => {
     Check(dir != null, "Cannot locate project assets");
     foreach (var file in Directory.GetFiles(Path.Combine(dir.FullName, "Assets"), "*.cs", SearchOption.AllDirectories))
     {
-        var tree = CSharpSyntaxTree.ParseText(File.ReadAllText(file), new CSharpParseOptions(LanguageVersion.CSharp9), file);
+        var tree = CSharpSyntaxTree.ParseText(File.ReadAllText(file), new CSharpParseOptions(LanguageVersion.CSharp9, preprocessorSymbols: new[] { "UNITY_EDITOR", "UNITY_ANDROID", "UNITY_6000_0_OR_NEWER" }), file);
         var errors = tree.GetDiagnostics().Where(d => d.Severity == DiagnosticSeverity.Error).ToArray();
         Check(errors.Length == 0, string.Join("\n", errors.Select(e => e.ToString())));
     }
 });
+
+var campaign = JsonSerializer.Deserialize<CampaignData>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "campaign.json")), options);
+Test("campaign has fifty sequential validated levels", () => {
+    Check(campaign.version == 1 && campaign.levels.Length == 50);
+    for (int i = 0; i < 50; i++) Check(campaign.levels[i].id == i + 1 && LevelValidation.Error(campaign.levels[i]) == null, "Invalid campaign level " + (i + 1));
+});
+foreach (var campaignLevel in campaign.levels)
+{
+    var data = campaignLevel;
+    Test($"campaign {data.id:00} all cargo can complete within timer without collision", () => {
+        var sim = new CampaignSimulation(cfg); sim.Load(data);
+        foreach (var solution in data.solutions)
+        {
+            var path = new PathData(256);
+            foreach (var point in solution.points) path.Add(point.Vector, data.maxPathLength, 0);
+            Check(sim.Launch(solution.cargo, path), "Route refused");
+            int ticks = 0;
+            while (sim.Shuttle(solution.cargo).Phase != 4 && sim.Outcome == 0 && ticks++ < 1200)
+            {
+                sim.Step(1f / 60);
+                Check(sim.Attempts == 0, $"Collision at {sim.Shuttle(solution.cargo).Position.X}, {sim.Shuttle(solution.cargo).Position.Y}");
+            }
+            Check(sim.Shuttle(solution.cargo).Phase == 4, $"Cargo {solution.cargo} failed; phase={sim.Shuttle(solution.cargo).Phase}, position={sim.Shuttle(solution.cargo).Position.X},{sim.Shuttle(solution.cargo).Position.Y}");
+        }
+        Check(sim.Outcome == 1 && sim.Delivered == data.cargo.Length && sim.Stars >= 1, "No win");
+    });
+}
+Test("barrier swept collision catches crossings", () => Check(CollisionMath.SegmentBox(new Float2(-2, 0), new Float2(2, 0), default, .5f, .1f)));
+Test("timed failure fires once and cannot become a win", () => {
+    var sim = new CampaignSimulation(cfg); sim.Load(campaign.levels[10]); int calls = 0; sim.Finished += result => calls++;
+    for (int i = 0; i < 5000; i++) sim.Step(1f / 60);
+    Check(sim.Outcome == 2 && calls == 1 && sim.Stars == 0);
+});
+Test("unstepped paused simulation has no timer drift", () => { var sim = new CampaignSimulation(cfg); sim.Load(campaign.levels[10]); float remaining = sim.Remaining; Check(sim.Remaining == remaining && sim.Elapsed == 0); });
+Test("gravity pulls inward and barrier repels outward", () => {
+    var well = new HazardDefinition { kind = 2, radius = 2, strength = 2 };
+    Check(well.ForceAt(new Float2(1, 0), 0).X < 0);
+    well.kind = 1; Check(well.ForceAt(new Float2(1, 0), 0).X > 0);
+});
+
+
+Test("oversized local save is bounded and resets safely", () => WithStore((dir,store) => {
+    File.WriteAllText(Path.Combine(dir,"zerog_save.json"), new string('x',70000));
+    Check(store.Load().highestUnlockedLevel==1 && store.WasReset);
+}));
+Test("malformed level data and dependency cycles are rejected", () => {
+    var level = JsonSerializer.Deserialize<LevelDefinition>(JsonSerializer.Serialize(campaign.levels[34],options),options);
+    level.bays[0].unlockAfter=0; Check(LevelValidation.Error(level)!=null);
+    level.bays[0].unlockAfter=-1; level.hazards[0].radius=float.NaN; Check(LevelValidation.Error(level)!=null);
+});
+Test("later sectors tighten measurable challenge constraints", () => {
+    for(int i=1;i<50;i++) {
+        Check(campaign.levels[i].drift>campaign.levels[i-1].drift);
+        Check(campaign.levels[i].hazards.Length>=campaign.levels[i-1].hazards.Length);
+        if(i>10) Check(campaign.levels[i].timeLimit/campaign.levels[i].cargo.Length < campaign.levels[i-1].timeLimit/campaign.levels[i-1].cargo.Length);
+    }
+});
+Test("completion and dock events are emitted once", () => {
+    var level=campaign.levels[0]; var sim=new CampaignSimulation(cfg); sim.Load(level); int wins=0,docks=0;
+    sim.Finished+=value=>wins++; sim.Docked+=value=>docks++;
+    var path=new PathData(256); foreach(var p in level.solutions[0].points) path.Add(p.Vector,6,0);
+    Check(sim.Launch(0,path)); Check(!sim.Launch(0,path));
+    for(int i=0;i<2000;i++) sim.Step(1f/60);
+    Check(wins==1 && docks==1 && sim.Outcome==1);
+});
+Test("chain bay stays locked until its dependency is delivered", () => {
+    var level=campaign.levels[34]; var sim=new CampaignSimulation(cfg); sim.Load(level);
+    Check(sim.BayUnlocked(0) && !sim.BayUnlocked(1) && !sim.BayUnlocked(2));
+    var path=new PathData(256); foreach(var p in level.solutions[0].points) path.Add(p.Vector,6,0);
+    sim.Launch(0,path); for(int i=0;i<1200 && sim.Shuttle(0).Phase!=4;i++) sim.Step(1f/60);
+    Check(sim.BayUnlocked(1) && !sim.BayUnlocked(2));
+});
+
 int failed = 0;
 foreach (var test in tests)
 {

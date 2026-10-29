@@ -23,3 +23,7 @@ google-services.json
 Tests/**/bin/
 Tests/**/obj/
 artifacts/
+
+# Blender recovery files
+*.blend1
+*.blend2

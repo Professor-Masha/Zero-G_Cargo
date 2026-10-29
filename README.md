@@ -1,53 +1,58 @@
-# Zero-G Cargo
+# Zero-G Cargo — 50-sector 3D campaign
 
-An Android-first, offline path-drawing puzzle in **Unity 6.6 (6000.6.7f1)**. Draw a cargo shuttle's route, anticipate its momentum, and guide it to the bay of the same colour.
+An offline Android path-drawing puzzle for **Unity 6.6 / 6000.6.7f1**. Draw routes for cargo shuttles, anticipate inertia, avoid station hazards and dock at matching bays.
 
-This is the **first development prototype (0.1.1)**, not the 50-level release. Three tutorial deliveries exercise drawing, inertia, braking, meteorite collisions, recovery, ghost hints and local progress. Ads and analytics are absent, so no credentials or backend are needed.
+The repository now contains **50 campaign levels**, original modelled 3D assets, a station backdrop, local progression, sound/music/haptic settings, win/fail flow and an APK build command. **This is a development build candidate, not a device-validated finished release. No APK has been compiled in the cloud.** Unity import, 3D rendering, Android compilation, performance and human difficulty testing remain required on a licensed Unity machine.
 
-## Open on your laptop
+![Original model render](docs/visuals/3d-models-preview.jpg)
 
-1. Clone this repository (or download and extract the source), then open **Unity Hub → Add → Add project from disk** and select the repository root—the folder containing `Assets`, `Packages` and `ProjectSettings`.
-2. Use **Unity 6.6 (6000.6.7f1)**, matching the Recommended release in your Hub screenshot. In Hub, select **Installs → Install Editor → Unity 6.6 → Install** if needed. Allow Package Manager to restore **URP 17.5.0** and **uGUI 2.6.0**, which includes TextMeshPro. Do not install the old standalone TextMeshPro package.
-3. Preparation runs on first import. Also run **Zero-G Cargo → Prepare prototype** once. This creates the 2D URP renderer/pipeline and unlit station material, imports the bundled TMP essentials, registers four scenes, and sets portrait Android/ARM64/IL2CPP defaults and selects the legacy Input Manager used by this prototype. If preparation logs an input-handler change, restart Unity before Play. It does not overwrite level or inertia assets.
-4. Open `Assets/_Project/Scenes/Boot/Boot.unity`. Set the Game view to **9:16 portrait**, then press **Play**.
-5. Click **Begin shift**. Drag from the coloured triangle to the centre of the hexagonal bay, then release. The shuttle accelerates and retains momentum. A short path can be continued from its new resting position. Hitting the grey meteorite causes a spin and return; after two collisions a guide appears for three seconds.
-6. Finish a delivery to unlock the next. The third route needs a counter-arc around the meteorite. Use **II** or **Escape** to pause. Settings, privacy, restart, level select and return to menu are available.
+*Blender render of the exported models; not a Unity gameplay screenshot.*
 
-Preparation generates normal Unity assets/settings; review and commit those after a successful local import. Keep the generated `.meta` files. The cloud authoring environment did not contain a licensed Unity editor, so **Unity compilation, rendering and Android builds have not yet been verified**. See [validation](docs/VALIDATION.md) for the precise evidence and laptop checks.
+## Run on your laptop
 
-Upgrading an existing laptop checkout? Follow [the Unity 6.6 migration steps](docs/UNITY_6_UPGRADE.md) before opening it.
+1. Pull `master`, clone with GitHub Desktop, or extract a fresh GitHub ZIP into a new folder. The bundled model and menu assets are ordinary repository files, so the ZIP includes them. Git LFS rules remain available for future large art.
+2. Open the repository root in **Unity Hub**, using **Unity 6.6 (6000.6.7f1)**. Allow URP 17.5.0 and uGUI 2.6.0 to resolve.
+3. Run **Zero-G Cargo → Prepare game**. The old Prepare prototype menu is retained as an alias. Preparation creates a **3D Universal Renderer**, shader templates, TMP essential resources, Orbitron/Inter font assets and Android defaults. Old 2D pipeline assets are preserved but are no longer selected.
+4. If preparation changes Active Input Handling, restart Unity. This version uses **Input Manager (Old)**.
+5. Open `Assets/_Project/Scenes/Boot/Boot.unity`, select **9:16** in the Game view and press Play. Select Begin shift or an unlocked sector.
+6. Drag from any stationary shuttle to the bay with the matching cargo colour. Release to launch. A stopped short route can be continued. Collisions return that shuttle to its spawn. Timed sectors fail when the frame arc fills. Late bays remain small/locked until their dependency is delivered.
 
-## Test the simulation without Unity
+## Make the phone APK
 
-Install the .NET SDK pinned in `global.json` (8.0.419), then run:
+The APK must be compiled by Unity; this cloud has neither the Unity Editor nor a Unity licence. Your laptop must have a valid Unity licence and **Android Build Support + SDK/NDK Tools + OpenJDK** installed through Hub.
+
+1. Run Prepare game and check the Console for errors.
+2. In **File → Build Profiles**, switch to **Android**.
+3. Select **Zero-G Cargo → Build phone test APK**.
+4. On success, copy **`Builds/ZeroGCargo-phone-test.apk`** to an **ARM64 Android 8.0/API 26+** phone. Open it and allow installation from that source when Android asks.
+
+Alternatively, close the project in Unity and run the Windows build script from PowerShell:
+
+```powershell
+.\scripts\build-phone-apk.ps1
+```
+
+The script checks Unity's exit status, requires an actual APK file and prints its SHA-256. Logs go to `Builds/phone-build.log`. This APK uses Android's development signing key but disables Unity's development-player features. It is for testing, not a Play Store release. If an older APK with another signing key is already installed, Android may refuse the update; preserve any wanted save data before uninstalling.
+
+## What is included
+
+- Four modelled cargo shuttles, hexagonal dock, meteorite, energy emitter, gravity generator and a panelled station deck. FBX files are in `Assets/_Project/Resources/Models`; editable Blender source and rebuild script are in `art-source`.
+- A 50-tile scrollable sector map, progressive unlocks, best stars and local score. No lives, purchases, banners, accounts, backend or telemetry.
+- Early untimed teaching levels; later multi-cargo routes, time limits, repulsor fields, drifting meteorites, gravity and delivery dependencies. Collision recovery, brief early ghost guides, dock sparkles and synthesized audio.
+- Rounded UI, supplied OFL Orbitron/Inter fonts and an original generated station backdrop.
+- Strict level-data validation, save-size bounds, atomic save/backup recovery and future-schema write protection. Android build hooks disable application backups and cleartext networking. See [security limitations](docs/SECURITY.md).
+- A campaign editor with coordinate snapping, validation and solution simulation: **Zero-G Cargo → Campaign editor**.
+
+## Tests and limits
+
+Install .NET SDK 8.0.419 and run:
 
 ```sh
 dotnet run --project Tests/Core/ZeroGCargo.Core.Tests.csproj --configuration Release
 ```
 
-On Linux/macOS, `./scripts/test-core.sh` runs the same checks. The console runner exits nonzero for any failure and reports executed/passed/failed counts. It compiles the **same C# core files used by Unity**, tests all authored tutorial solution routes, exercises atomic saves and corruption recovery, and parses every Unity source as C# 9. It does not replace Unity compilation or device testing. GitHub Actions runs this suite on pushes and pull requests.
+The same C# simulation is compiled into Unity. The current suite has **96 checks**, including successful simulation solutions for all 50 levels, matching/docking, collisions, force fields, timer failure, delivery dependencies, one-shot events, save handling and C# syntax parsing. GitHub Actions runs it on pushes.
 
-## Android development build
+These checks do **not** compile against Unity assemblies, execute Package Manager or establish Android performance. Every level tightens authored drift and later per-delivery time constraints; more hazard types and dependencies appear by tier. **That is a designed difficulty progression, not proof each level is harder for every player.** Human playtests and tuning are still required before claiming a complete, engaging release. See [validation](docs/VALIDATION.md) and [campaign design](docs/CAMPAIGN.md).
 
-Android builds require **Android 8.0 (API 26) or newer**. In Unity Hub, install **Android Build Support**, including **Android SDK & NDK Tools** and **OpenJDK**, for this editor version. Switch the active platform to Android in **File → Build Profiles**, then run **Zero-G Cargo → Build Android development APK**. Output: `Builds/ZeroGCargo-dev.apk` (debug signing; ignored by Git). Install on a USB-debugging-enabled device and follow the smoke checks in [validation](docs/VALIDATION.md).
-
-This development APK is not a signed Google Play AAB. Release signing, Play Console setup and performance validation remain future work. Never commit keystores or passwords.
-
-## Current visuals and Editor display
-
-The game currently uses **placeholder shapes**, not finished art: coloured triangle shuttles, cyan hexagonal bays with cargo markers, a grey circular meteorite and cyan route lines. See [the current visual reference](docs/visuals/current-placeholder-reference.svg). The shapes are generated by `StationView.cs`; there is no hidden collection of finished sprites in the Art folder.
-
-The first slice has three tutorial levels; it is not the complete release described by the specifications. To play, drag from the coloured triangle toward the matching marker in the hexagon, then release. Avoid the grey circle. On the Holding Pattern screen, click Resume.
-
-For the intended phone composition, choose **9:16** in the Game view's aspect dropdown (currently labelled Free Aspect). UI scaling also keeps the full layout visible in wide Editor views. The canvas uses Expand scaling, updates safe-area bounds on resize, and no longer pauses simply because another Editor panel gains focus. On-device app focus loss still pauses the game. These layout changes require laptop Play-mode verification; the cloud cannot render Unity.
-
-## Structure and next work
-
-- `Assets/_Project/Scripts/Core`: Unity-independent routes, vectors, simulation, docking rules and save store.
-- `Assets/_Project/Scripts/{Gameplay,Data,UI,Audio}`: Unity adapters, reusable placeholder station, screens and synthesized sound feedback.
-- `Assets/_Project/Resources/{Config,Levels}`: tunable assets and three authored tutorials.
-- `Assets/_Project/Scenes`: Boot → MainMenu → LevelSelect → Gameplay, with one persistent composition root.
-- `Assets/_Project/Editor/ProjectSetup.cs`: repeatable editor preparation and development build command.
-- `docs/specifications`: the ten supplied source documents, retained as product references.
-
-[Scope and roadmap](docs/DEVELOPMENT.md) distinguishes this slice from the full specification. The next milestone is laptop/editor validation and feel tuning, followed by multi-shuttle levels, energy barriers, gravity wells, timers, the level editor and the remaining authored content. AdMob/Firebase integration comes later with test units and project configuration. No ads after failure, no banners, no purchases and no backend in v1.0.
+AdMob/Firebase integrations from the original specification are not installed. Offline phone testing needs no credentials; no fake ad rewards or analytics integrations are presented as working. The original ten specifications remain archived in `docs/specifications`.

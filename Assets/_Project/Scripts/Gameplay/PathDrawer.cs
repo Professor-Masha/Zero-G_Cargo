@@ -6,64 +6,73 @@ using ZeroGCargo.Data;
 
 namespace ZeroGCargo.Gameplay
 {
-    /// <summary>Single-pointer path input with pickup rejection and preallocated route storage.</summary>
+    /// <summary>Single-pointer, UI-aware drawing on the 3D station's XZ plane.</summary>
     public sealed class PathDrawer
     {
-        private readonly GameConfig game;
-        private readonly InertiaConfig inertia;
         private readonly Camera camera;
+        private readonly GameConfig config;
+        private readonly Plane plane = new Plane(Vector3.up, Vector3.zero);
         private bool drawing;
-        private int pointerId;
-        /// <summary>Reusable accepted or in-progress route.</summary>
+        private int pointer;
+        private float budget;
+        /// <summary>Reusable input buffer.</summary>
         public PathData Path { get; }
-        /// <summary>Raised once when a sufficiently long route is released.</summary>
-        public event Action<PathData> OnPathComplete;
-        /// <summary>Creates input state and its fixed-capacity route buffer.</summary>
-        public PathDrawer(Camera camera, GameConfig game, InertiaConfig inertia)
-        { this.camera = camera; this.game = game; this.inertia = inertia; Path = new PathData(game.PathCapacity); }
-        /// <summary>Cancels an active pointer without launching the route.</summary>
-        public void Cancel() { drawing = false; }
-        /// <summary>Reads mouse or the original touch only; ignores UI and additional touches.</summary>
-        public void Tick(Vector2 shuttle, bool canDraw)
+        /// <summary>Selected shuttle, or -1 before a selection.</summary>
+        public int Selected { get; private set; } = -1;
+        /// <summary>Emitted once per released route.</summary>
+        public event Action<int,PathData> OnPathComplete;
+        /// <summary>Creates a fixed input buffer.</summary>
+        public PathDrawer(Camera camera, GameConfig config) { this.camera = camera; this.config = config; Path = new PathData(config.PathCapacity); }
+        /// <summary>Cancels the pointer without launching a route.</summary>
+        public void Cancel() { drawing = false; Selected = -1; Path.Clear(); }
+        private Float2 World(Vector2 screen)
         {
-            if (!canDraw) { Cancel(); return; }
+            Ray ray = camera.ScreenPointToRay(screen);
+            if (!plane.Raycast(ray,out float distance)) return new Float2(float.NaN,float.NaN);
+            Vector3 p = ray.GetPoint(distance); return new Float2(p.x,p.z);
+        }
+        /// <summary>Reads the original pointer only, rejecting additional touches and UI.</summary>
+        public void Tick(CampaignSimulation simulation)
+        {
+            if (simulation.Outcome != 0) { Cancel(); return; }
             if (Input.touchCount > 0)
             {
                 for (int i = 0; i < Input.touchCount; i++)
                 {
-                    Touch touch = Input.GetTouch(i);
-                    if (touch.phase == TouchPhase.Began && !drawing) Begin(touch.position, touch.fingerId, shuttle);
-                    if (!drawing || touch.fingerId != pointerId) continue;
+                    var touch = Input.GetTouch(i);
+                    if (touch.phase == TouchPhase.Began && !drawing) Begin(touch.position,touch.fingerId,simulation);
+                    if (!drawing || touch.fingerId != pointer) continue;
                     if (touch.phase == TouchPhase.Canceled) { Cancel(); return; }
-                    Sample(touch.position);
-                    if (touch.phase == TouchPhase.Ended) End();
+                    Sample(touch.position); if (touch.phase == TouchPhase.Ended) End();
                 }
                 return;
             }
-            if (drawing && pointerId != -1) { Cancel(); return; }
-            if (Input.GetMouseButtonDown(0)) Begin(Input.mousePosition, -1, shuttle);
+            if (drawing && pointer != -1) { Cancel(); return; }
+            if (Input.GetMouseButtonDown(0)) Begin(Input.mousePosition,-1,simulation);
             if (drawing && Input.GetMouseButton(0)) Sample(Input.mousePosition);
             if (drawing && Input.GetMouseButtonUp(0)) { Sample(Input.mousePosition); End(); }
         }
-        private Vector2 World(Vector2 screen) => camera.ScreenToWorldPoint(new Vector3(screen.x, screen.y, -camera.transform.position.z));
-        private void Begin(Vector2 screen, int id, Vector2 shuttle)
+        private void Begin(Vector2 screen, int id, CampaignSimulation simulation)
         {
             if (EventSystem.current != null && (id == -1 ? EventSystem.current.IsPointerOverGameObject() : EventSystem.current.IsPointerOverGameObject(id))) return;
-            if (Vector2.Distance(World(screen), shuttle) > game.PickupRadius) return;
-            Path.Clear(); Path.Add(new Float2(shuttle.x, shuttle.y), inertia.MaxPathLength, 0);
-            drawing = true; pointerId = id;
+            Float2 point = World(screen); float nearest = config.PickupRadius; int selected = -1;
+            for (int i = 0; i < simulation.Level.cargo.Length; i++)
+            { var shuttle = simulation.Shuttle(i); float distance = (point-shuttle.Position).Magnitude; if (shuttle.CanDraw && distance < nearest) { nearest = distance; selected = i; } }
+            if (selected < 0) return;
+            Selected = selected; pointer = id; drawing = true; budget = simulation.Level.maxPathLength;
+            Path.Clear(); Path.Add(simulation.Shuttle(selected).Position,budget,0);
         }
         private void Sample(Vector2 screen)
         {
-            Vector2 p = World(screen);
-            p.x = Mathf.Clamp(p.x, -game.BoundaryX, game.BoundaryX); p.y = Mathf.Clamp(p.y, -game.BoundaryY, game.BoundaryY);
-            Path.Add(new Float2(p.x, p.y), inertia.MaxPathLength, game.PointSpacing);
+            Float2 p = World(screen); if (!p.IsFinite) return;
+            p = new Float2(Mathf.Clamp(p.X,-config.BoundaryX,config.BoundaryX),Mathf.Clamp(p.Y,-config.BoundaryY,config.BoundaryY));
+            Path.Add(p,budget,config.PointSpacing);
         }
         private void End()
         {
             drawing = false;
-            if (Path.Length >= game.MinimumPathLength) OnPathComplete?.Invoke(Path);
-            else Path.Clear();
+            if (Path.Length >= config.MinimumPathLength) OnPathComplete?.Invoke(Selected,Path);
+            Path.Clear(); Selected = -1;
         }
     }
 }

@@ -27,6 +27,7 @@ namespace ZeroGCargo.Core
             if (!File.Exists(path)) return null;
             try
             {
+                if (new FileInfo(path).Length > 65536) return null;
                 SaveData data = decode(File.ReadAllText(path));
                 if (data != null && data.version > 1) IsReadOnly = true;
                 return data != null && data.Validate() ? data : null;

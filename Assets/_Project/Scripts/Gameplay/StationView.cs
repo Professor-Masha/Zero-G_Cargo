@@ -1,112 +1,174 @@
+using System;
 using UnityEngine;
+using ZeroGCargo.Core;
 using ZeroGCargo.Data;
 using ZeroGCargo.UI;
 
 namespace ZeroGCargo.Gameplay
 {
-    /// <summary>Reusable placeholder art and route buffers; allocated only at scene startup.</summary>
+    /// <summary>Prewarmed original 3D models and reusable line renderers on the XZ station plane.</summary>
     public sealed class StationView
     {
         private readonly GameObject root;
-        private readonly Transform shuttle;
-        private readonly Transform bay;
-        private readonly Transform meteorite;
-        private readonly SpriteRenderer shuttleSprite;
-        private readonly LineRenderer route;
-        private readonly LineRenderer hint;
-        private readonly LineRenderer bayLine;
-        private readonly Vector3[] buffer;
-        private readonly Material material;
-        private readonly Sprite triangleSprite;
-        private readonly Sprite circleSprite;
-        /// <summary>Creates one reusable station; no instantiate/destroy occurs in flight.</summary>
+        private readonly Transform[] shuttles = new Transform[4];
+        private readonly Transform[] bays = new Transform[4];
+        private readonly Transform[] hazards = new Transform[16];
+        private readonly LineRenderer[] routes = new LineRenderer[4];
+        private readonly LineRenderer[] hints = new LineRenderer[4];
+        private readonly GameObject[,] shuttleVariants = new GameObject[4,4];
+        private readonly GameObject[,] hazardVariants = new GameObject[16,3];
+        private readonly Material[] materials = new Material[12];
+        private int materialCount;
+        private readonly GameConfig config;
+        private readonly Material lineMaterial;
+        private readonly Transform[] sparks = new Transform[24];
+        private readonly Float2[] sparkCenters = new Float2[24];
+        private readonly float[] sparkAge = new float[24];
+        private int sparkCursor;
+        /// <summary>Creates all reusable models and effects before gameplay.</summary>
         public StationView(GameConfig config)
         {
-            root = new GameObject("Station (reused between levels)");
-            Object.DontDestroyOnLoad(root);
-            Material template = Resources.Load<Material>("Config/StationLineMaterial");
-            if (template == null) throw new System.InvalidOperationException("Run Zero-G Cargo > Prepare prototype to create the station material.");
-            material = new Material(template);
-            triangleSprite = CreateSprite(true); circleSprite = CreateSprite(false);
-            shuttleSprite = MakeSprite("Shuttle", triangleSprite, ColorTokens.Cargo(CargoColor.Magenta));
-            shuttle = shuttleSprite.transform; shuttle.localScale = Vector3.one * 0.42f;
-            bayLine = MakeLine("Docking bay", 0.035f, ColorTokens.Accent);
-            bayLine.loop = true; bayLine.positionCount = 6; bay = bayLine.transform;
-            for (int i = 0; i < 6; i++)
+            this.config = config; root = new GameObject("3D station and prewarmed models"); UnityEngine.Object.DontDestroyOnLoad(root);
+            lineMaterial = new Material(Resources.Load<Material>("Config/Station3DLineMaterial")); lineMaterial.color = ColorTokens.Accent;
+            CreateModel("StationDeck", root.transform);
+            for (int i = 0; i < 4; i++)
             {
-                float angle = i * Mathf.PI / 3;
-                bayLine.SetPosition(i, new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * config.DockRadius);
+                shuttles[i] = new GameObject("Shuttle " + i).transform; shuttles[i].SetParent(root.transform);
+                for (int c = 0; c < 4; c++) { shuttleVariants[i,c] = CreateModel("Shuttle" + ((CargoColor)c), shuttles[i]); shuttleVariants[i,c].SetActive(false); }
+                bays[i] = CreateModel("Dock", root.transform).transform;
+                routes[i] = Line("Flight route", config.LineWidth); hints[i] = Line("Guide route", config.LineWidth);
+                hints[i].startColor = new Color(0,1,1,.25f); hints[i].endColor = new Color(0,1,1,.4f);
             }
-            bayLine.useWorldSpace = false;
-            var core = MakeSprite("Cargo marker", circleSprite, ColorTokens.Cargo(CargoColor.Magenta));
-            core.transform.SetParent(bay, false); core.transform.localScale = Vector3.one * 0.18f;
-            meteorite = MakeSprite("Meteorite", circleSprite, new Color32(90, 102, 123, 255)).transform;
-            route = MakeLine("Comet route", config.LineWidth, ColorTokens.Accent);
-            route.startColor = new Color(0, 0.94f, 1, 0.25f); route.endColor = ColorTokens.Accent;
-            hint = MakeLine("Ghost hint", config.LineWidth, new Color(0, 0.94f, 1, 0.3f));
-            buffer = new Vector3[config.PathCapacity];
+            string[] names = { "Meteorite", "EnergyBarrier", "GravityWell" };
+            for (int i = 0; i < 16; i++)
+            {
+                hazards[i] = new GameObject("Hazard " + i).transform; hazards[i].SetParent(root.transform);
+                for (int k = 0; k < 3; k++) { hazardVariants[i,k] = CreateModel(names[k], hazards[i]); hazardVariants[i,k].SetActive(false); }
+            }
+            // Prewarm dock spark geometry once; never instantiate effects in flight.
+            for (int i = 0; i < sparks.Length; i++)
+            {
+                var obj = new GameObject("Dock sparkle"); obj.transform.SetParent(root.transform);
+                var filter = obj.AddComponent<MeshFilter>(); filter.sharedMesh = SparkMesh();
+                var renderer = obj.AddComponent<MeshRenderer>(); renderer.sharedMaterial = lineMaterial;
+                sparks[i] = obj.transform; obj.SetActive(false); sparkAge[i] = 1;
+            }
         }
-        private SpriteRenderer MakeSprite(string name, Sprite sprite, Color color)
+        private static Mesh sparkMesh;
+        private static Mesh SparkMesh()
+        {
+            if (sparkMesh != null) return sparkMesh;
+            sparkMesh = new Mesh { name = "Shared dock sparkle" };
+            sparkMesh.vertices = new[] { new Vector3(-.02f,0,0),new Vector3(0,.02f,0),new Vector3(.02f,0,0),new Vector3(0,-.02f,0) };
+            sparkMesh.triangles = new[] {0,1,2,0,2,3}; sparkMesh.RecalculateNormals(); return sparkMesh;
+        }
+        private GameObject CreateModel(string name, Transform parent)
+        {
+            var asset = Resources.Load<GameObject>("Models/" + name);
+            if (asset == null) throw new InvalidOperationException("Missing 3D model: " + name);
+            var obj = UnityEngine.Object.Instantiate(asset, parent); obj.name = name;
+            foreach (var renderer in obj.GetComponentsInChildren<MeshRenderer>())
+            {
+                Material[] source = renderer.sharedMaterials;
+                for (int i = 0; i < source.Length; i++) source[i] = Surface(source[i] == null ? "Hull" : source[i].name);
+                renderer.sharedMaterials = source;
+            }
+            return obj;
+        }
+        private Material Surface(string name)
+        {
+            name = name.Replace(" (Instance)", "");
+            for (int i = 0; i < materialCount; i++) if (materials[i].name == name) return materials[i];
+            var mat = new Material(Resources.Load<Material>("Config/StationSurfaceMaterial")) { name = name };
+            Color color = new Color(.09f,.13f,.20f); bool emissive = false;
+            if (name.Contains("Steel")) color = new Color(.22f,.30f,.40f);
+            if (name.Contains("Deck")) color = new Color(.025f,.04f,.07f);
+            if (name.Contains("Rock")) color = new Color(.17f,.21f,.28f);
+            if (name.Contains("Glass")) color = new Color(.02f,.23f,.30f);
+            if (name.Contains("Cyan")) { color = ColorTokens.Accent; emissive = true; }
+            if (name.Contains("Danger")) { color = new Color32(255,68,68,255); emissive = true; }
+            for (int c = 0; c < 4; c++) if (name.Contains(((CargoColor)c).ToString())) { color = ColorTokens.Cargo((CargoColor)c); emissive = true; }
+            mat.color = color; mat.SetFloat("_Metallic", emissive ? .15f : .5f); mat.SetFloat("_Smoothness", .4f);
+            if (emissive) { mat.EnableKeyword("_EMISSION"); mat.SetColor("_EmissionColor", color * .6f); }
+            if (materialCount >= materials.Length) throw new InvalidOperationException("Material palette exceeded");
+            materials[materialCount++] = mat; return mat;
+        }
+        private LineRenderer Line(string name, float width)
         {
             var obj = new GameObject(name); obj.transform.SetParent(root.transform);
-            var renderer = obj.AddComponent<SpriteRenderer>(); renderer.sprite = sprite; renderer.color = color; renderer.sharedMaterial = material; return renderer;
+            var line = obj.AddComponent<LineRenderer>(); line.sharedMaterial = lineMaterial; line.widthMultiplier = width;
+            line.startColor = new Color(0,1,1,.15f); line.endColor = ColorTokens.Accent; line.numCornerVertices = 4; line.numCapVertices = 4;
+            line.positionCount = 0; return line;
         }
-        private LineRenderer MakeLine(string name, float width, Color color)
+        private static Vector3 World(Float2 p, float height = .1f) => new Vector3(p.X, height, p.Y);
+        /// <summary>Places the reusable objects for a new validated level.</summary>
+        public void Load(LevelDefinition data)
         {
-            var obj = new GameObject(name); obj.transform.SetParent(root.transform);
-            var line = obj.AddComponent<LineRenderer>(); line.sharedMaterial = material; line.widthMultiplier = width;
-            line.startColor = color; line.endColor = color; line.numCornerVertices = 3; line.numCapVertices = 3;
-            line.positionCount = 0; line.sortingOrder = -1; return line;
-        }
-        private static Sprite CreateSprite(bool triangle)
-        {
-            const int size = 64;
-            var texture = new Texture2D(size, size, TextureFormat.RGBA32, false) { filterMode = FilterMode.Bilinear };
-            var pixels = new Color32[size * size];
-            for (int y = 0; y < size; y++) for (int x = 0; x < size; x++)
+            root.SetActive(true);
+            for (int i = 0; i < 4; i++)
             {
-                float nx = (x + 0.5f) / size * 2 - 1, ny = (y + 0.5f) / size * 2 - 1;
-                bool inside = triangle ? nx >= -0.8f && nx <= 0.95f && Mathf.Abs(ny) <= (0.95f - nx) * 0.52f : nx * nx + ny * ny <= 0.94f;
-                pixels[y * size + x] = inside ? new Color32(255, 255, 255, 255) : new Color32(255, 255, 255, 0);
+                shuttles[i].gameObject.SetActive(i < data.cargo.Length); bays[i].gameObject.SetActive(i < data.bays.Length);
+                for (int c = 0; c < 4; c++) shuttleVariants[i,c].SetActive(i < data.cargo.Length && c == data.cargo[i].color);
+                routes[i].positionCount = 0; hints[i].positionCount = 0;
+                if (i >= data.cargo.Length) continue;
+                shuttles[i].position = World(data.cargo[i].spawn.Vector, 0); shuttles[i].localScale = Vector3.one;
+                bays[i].position = World(data.bays[i].position.Vector, -.015f);
+                foreach (var renderer in bays[i].GetComponentsInChildren<MeshRenderer>())
+                    if (renderer.name.Contains("Cargo identification")) renderer.sharedMaterial = Surface(((CargoColor)data.bays[i].color).ToString());
             }
-            texture.SetPixels32(pixels); texture.Apply(); return Sprite.Create(texture, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), size);
+            for (int i = 0; i < 16; i++)
+            {
+                hazards[i].gameObject.SetActive(i < data.hazards.Length);
+                for (int k = 0; k < 3; k++) hazardVariants[i,k].SetActive(i < data.hazards.Length && data.hazards[i].kind == k);
+                if (i >= data.hazards.Length) continue;
+                var h = data.hazards[i]; hazards[i].position = World(h.position.Vector, 0);
+                hazards[i].localScale = h.kind == 0 ? Vector3.one * (h.radius / .44f) : h.kind == 1 ? new Vector3(h.halfWidth * 2, 1, h.halfHeight * 2 / .085f) : new Vector3(h.radius / .68f, 1, h.radius / .68f);
+            }
+            for (int i = 0; i < sparks.Length; i++) { sparks[i].gameObject.SetActive(false); sparkAge[i] = 1; }
         }
-        /// <summary>Resets the station for an authored level.</summary>
-        public void Load(LevelData level)
+        /// <summary>Updates only transforms, line points and pooled particle state.</summary>
+        public void Render(CampaignSimulation simulation, PathData input, int selected, float dt)
         {
-            root.SetActive(true); shuttle.position = level.Spawn; shuttle.rotation = Quaternion.identity;
-            shuttleSprite.color = ColorTokens.Cargo(level.Cargo); shuttle.localScale = Vector3.one * 0.42f;
-            bay.position = level.Bay; bay.GetComponentInChildren<SpriteRenderer>().color = ColorTokens.Cargo(level.BayCargo);
-            meteorite.position = level.Meteorite; meteorite.localScale = Vector3.one * (level.MeteoriteRadius * 2);
-            route.positionCount = 0; hint.positionCount = 0;
+            for (int i = 0; i < simulation.Level.cargo.Length; i++)
+            {
+                var s = simulation.Shuttle(i); shuttles[i].position = World(s.Position, .07f);
+                shuttles[i].rotation = Quaternion.Euler(0,-s.Angle * Mathf.Rad2Deg,0);
+                float scale = s.Phase == 4 ? 0 : s.Phase == 3 ? 1 - Mathf.Clamp01(s.Animation / .3f) : 1;
+                shuttles[i].localScale = Vector3.one * (scale*.5f);
+                routes[i].startColor = new Color(0,1,1,s.Route.Length > 0 ? Mathf.Lerp(.4f,0,Mathf.Clamp01(s.Flight.Progress/s.Route.Length)) : .4f);
+                Draw(routes[i], selected == i && s.CanDraw && input.Count > 0 ? input : s.Route);
+                bool show = simulation.HintVisible && simulation.Level.id <= 10 && s.Phase == 0;
+                var points = simulation.Level.solutions[i].points; hints[i].positionCount = show ? points.Length : 0;
+                if (show) for (int k = 0; k < points.Length; k++) hints[i].SetPosition(k, World(points[k].Vector,.11f));
+                bays[i].localScale = Vector3.one * (simulation.BayUnlocked(i) ? 1 : .65f);
+            }
+            for (int i = 0; i < simulation.Level.hazards.Length; i++)
+            {
+                var h = simulation.Level.hazards[i]; hazards[i].position = World(h.At(simulation.Elapsed),0);
+                if (h.kind == 2) hazards[i].rotation = Quaternion.Euler(0,simulation.Elapsed*12,0);
+            }
+            for (int i = 0; i < sparks.Length; i++)
+            {
+                if (sparkAge[i] >= .6f) continue;
+                sparkAge[i] += dt; float angle = i * 2.4f, distance = sparkAge[i] * 1.2f;
+                sparks[i].position = World(sparkCenters[i] + new Float2(Mathf.Cos(angle),Mathf.Sin(angle))*distance,.3f);
+                sparks[i].localScale = Vector3.one * (1 - sparkAge[i] / .6f); sparks[i].rotation = Quaternion.Euler(90,0,angle*Mathf.Rad2Deg);
+                if (sparkAge[i] >= .6f) sparks[i].gameObject.SetActive(false);
+            }
         }
-        /// <summary>Shows or hides the board without destroying pooled objects.</summary>
+        private static void Draw(LineRenderer line, PathData path)
+        { line.positionCount = path.Count; for (int i = 0; i < path.Count; i++) line.SetPosition(i,World(path[i],.10f)); }
+        /// <summary>Emits a bounded prewarmed sparkle burst.</summary>
+        public void Spark(Float2 position)
+        { for (int i = 0; i < 8; i++) { int at = sparkCursor++ % sparks.Length; sparkCenters[at] = position; sparkAge[at] = 0; sparks[at].gameObject.SetActive(true); } }
+        /// <summary>Shows or hides the station.</summary>
         public void SetVisible(bool visible) => root.SetActive(visible);
-        /// <summary>Updates shuttle transform.</summary>
-        public void Move(Vector2 position, float angle, float scale = 1)
-        { shuttle.position = position; shuttle.rotation = Quaternion.Euler(0, 0, angle); shuttle.localScale = Vector3.one * (0.42f * scale); }
-        /// <summary>Renders the route, fading the already-travelled portion.</summary>
-        public void DrawPath(Core.PathData path, float progress)
-        {
-            route.positionCount = path.Count;
-            for (int i = 0; i < path.Count; i++)
-            {
-                Core.Float2 p = path[i]; buffer[i] = new Vector3(p.X, p.Y, 0);
-                route.SetPosition(i, buffer[i]);
-            }
-            route.startColor = new Color(0, 0.94f, 1, path.Length > 0 ? Mathf.Lerp(0.25f, 0, progress / path.Length) : 0.25f);
-        }
-        /// <summary>Shows a tutorial solution guide.</summary>
-        public void ShowHint(Vector2[] points, bool visible)
-        {
-            hint.positionCount = visible ? points.Length : 0;
-            if (visible) for (int i = 0; i < points.Length; i++) hint.SetPosition(i, points[i]);
-        }
-        /// <summary>Releases owned generated resources when the scene is destroyed.</summary>
+        /// <summary>Releases owned runtime materials and geometry.</summary>
         public void Dispose()
         {
-            Object.Destroy(material); Object.Destroy(triangleSprite.texture); Object.Destroy(circleSprite.texture);
-            Object.Destroy(triangleSprite); Object.Destroy(circleSprite); Object.Destroy(root);
+            for (int i = 0; i < materialCount; i++) UnityEngine.Object.Destroy(materials[i]);
+            UnityEngine.Object.Destroy(lineMaterial); UnityEngine.Object.Destroy(root);
+            if (sparkMesh != null) { UnityEngine.Object.Destroy(sparkMesh); sparkMesh = null; }
         }
     }
 }

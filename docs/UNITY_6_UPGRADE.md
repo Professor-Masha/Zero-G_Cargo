@@ -36,3 +36,7 @@ Official source references used for migration:
 ## Verification limits
 
 The cloud checks compile/test the shared C# core and parse every Unity source. They do not execute Unity Package Manager, compile against Unity assemblies or validate rendering/device builds. Unity Editor is installed on the user's laptop, not in this cloud environment. Editor import, actual package resolution, play mode and Android validation remain pending on the laptop; the migration does not claim these checks passed.
+
+## Later 3D campaign update
+
+The current game replaces the old 2D renderer with a new Universal 3D renderer and uses bundled FBX models, the fifty-level campaign and generated Orbitron/Inter TMP font assets. After pulling this update, run **Prepare game**, not just Play. Earlier 2D pipeline assets are left intact but are no longer assigned by preparation. The old Prepare prototype entry is kept as an alias. See README for the phone-test APK build.

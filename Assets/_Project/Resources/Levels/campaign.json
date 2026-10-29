@@ -1,0 +1,6699 @@
+{
+  "version": 1,
+  "levels": [
+    {
+      "id": 1,
+      "title": "First light",
+      "difficulty": 1,
+      "timeLimit": 0,
+      "drift": 0.103,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.3,
+            "y": -1.2
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 0,
+          "position": {
+            "x": 1.3,
+            "y": 1.2
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 1.6,
+            "y": -1.5
+          },
+          "radius": 0.246,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.3,
+              "y": -1.2
+            },
+            {
+              "x": 1.3,
+              "y": 1.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Momentum",
+      "difficulty": 2,
+      "timeLimit": 0,
+      "drift": 0.106,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 1,
+          "spawn": {
+            "x": -1.6,
+            "y": -1.2
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 1,
+          "position": {
+            "x": 1.6,
+            "y": 1.2
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 1.6,
+            "y": -1.5
+          },
+          "radius": 0.252,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.6,
+              "y": -1.2
+            },
+            {
+              "x": 1.6,
+              "y": 1.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Around the rock",
+      "difficulty": 3,
+      "timeLimit": 0,
+      "drift": 0.109,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.629,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 2,
+          "position": {
+            "x": 1.629,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.258,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.629,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.629,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Quiet orbit",
+      "difficulty": 4,
+      "timeLimit": 0,
+      "drift": 0.112,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.632,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 3,
+          "position": {
+            "x": -1.632,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.264,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.632,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.632,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Long arc",
+      "difficulty": 5,
+      "timeLimit": 0,
+      "drift": 0.115,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.635,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 0,
+          "position": {
+            "x": 1.635,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.27,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.635,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.635,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Counter drift",
+      "difficulty": 6,
+      "timeLimit": 0,
+      "drift": 0.118,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.638,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 1,
+          "position": {
+            "x": -1.638,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.276,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.638,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.638,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Fine approach",
+      "difficulty": 7,
+      "timeLimit": 0,
+      "drift": 0.121,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.641,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 2,
+          "position": {
+            "x": 1.641,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.282,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.641,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.641,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Night shift",
+      "difficulty": 8,
+      "timeLimit": 0,
+      "drift": 0.124,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.644,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 3,
+          "position": {
+            "x": -1.644,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.288,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.644,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.644,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "The narrow route",
+      "difficulty": 9,
+      "timeLimit": 0,
+      "drift": 0.127,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.647,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 0,
+          "position": {
+            "x": 1.647,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.294,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.647,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.647,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Flight certified",
+      "difficulty": 10,
+      "timeLimit": 0,
+      "drift": 0.13,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.65,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 1,
+          "position": {
+            "x": -1.65,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.3,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.65,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.65,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Energy corridor 11",
+      "difficulty": 11,
+      "timeLimit": 60.0,
+      "drift": 0.133,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.653,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.653,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 2,
+          "position": {
+            "x": 1.653,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 3,
+          "position": {
+            "x": -1.653,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.306,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.4,
+          "halfHeight": 0.07,
+          "strength": 1.0,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.653,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.653,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.653,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.653,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Energy corridor 12",
+      "difficulty": 12,
+      "timeLimit": 59.4,
+      "drift": 0.136,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.656,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.656,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 3,
+          "position": {
+            "x": -1.656,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 0,
+          "position": {
+            "x": 1.656,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.312,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.402,
+          "halfHeight": 0.07,
+          "strength": 1.02,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.656,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.656,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.656,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.656,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Energy corridor 13",
+      "difficulty": 13,
+      "timeLimit": 58.8,
+      "drift": 0.139,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.659,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.659,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 0,
+          "position": {
+            "x": 1.659,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 1,
+          "position": {
+            "x": -1.659,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.318,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.404,
+          "halfHeight": 0.07,
+          "strength": 1.04,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.659,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.659,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.659,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.659,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Energy corridor 14",
+      "difficulty": 14,
+      "timeLimit": 58.2,
+      "drift": 0.142,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.662,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.662,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 1,
+          "position": {
+            "x": -1.662,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 2,
+          "position": {
+            "x": 1.662,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.324,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.406,
+          "halfHeight": 0.07,
+          "strength": 1.06,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.662,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.662,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.662,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.662,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Energy corridor 15",
+      "difficulty": 15,
+      "timeLimit": 57.6,
+      "drift": 0.145,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.665,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.665,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 2,
+          "position": {
+            "x": 1.665,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 3,
+          "position": {
+            "x": -1.665,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.32999999999999996,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.40800000000000003,
+          "halfHeight": 0.07,
+          "strength": 1.08,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.665,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.665,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.665,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.665,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Energy corridor 16",
+      "difficulty": 16,
+      "timeLimit": 57.0,
+      "drift": 0.148,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.668,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.668,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 3,
+          "position": {
+            "x": -1.668,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 0,
+          "position": {
+            "x": 1.668,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.33599999999999997,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.41000000000000003,
+          "halfHeight": 0.07,
+          "strength": 1.1,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.668,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.668,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.668,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.668,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Energy corridor 17",
+      "difficulty": 17,
+      "timeLimit": 56.4,
+      "drift": 0.151,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.671,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.671,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 0,
+          "position": {
+            "x": 1.671,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 1,
+          "position": {
+            "x": -1.671,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.34199999999999997,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.41200000000000003,
+          "halfHeight": 0.07,
+          "strength": 1.12,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.671,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.671,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.671,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.671,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Energy corridor 18",
+      "difficulty": 18,
+      "timeLimit": 55.8,
+      "drift": 0.154,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.674,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.674,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 1,
+          "position": {
+            "x": -1.674,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 2,
+          "position": {
+            "x": 1.674,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.348,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.41400000000000003,
+          "halfHeight": 0.07,
+          "strength": 1.1400000000000001,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.674,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.674,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.674,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.674,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Energy corridor 19",
+      "difficulty": 19,
+      "timeLimit": 55.2,
+      "drift": 0.157,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.677,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.677,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 2,
+          "position": {
+            "x": 1.677,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 3,
+          "position": {
+            "x": -1.677,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.354,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.41600000000000004,
+          "halfHeight": 0.07,
+          "strength": 1.16,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.677,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.677,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.677,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.677,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Energy corridor 20",
+      "difficulty": 20,
+      "timeLimit": 54.6,
+      "drift": 0.16,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.68,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.68,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 3,
+          "position": {
+            "x": -1.68,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 0,
+          "position": {
+            "x": 1.68,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.36,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.41800000000000004,
+          "halfHeight": 0.07,
+          "strength": 1.18,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.68,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.68,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.68,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.68,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Moving freight 21",
+      "difficulty": 21,
+      "timeLimit": 54.0,
+      "drift": 0.163,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.683,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.683,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 0,
+          "position": {
+            "x": 1.683,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 1,
+          "position": {
+            "x": -1.683,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.366,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.42000000000000004,
+          "halfHeight": 0.07,
+          "strength": 1.2,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.3,
+          "drift": 0.12,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.683,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.683,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.683,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.683,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Moving freight 22",
+      "difficulty": 22,
+      "timeLimit": 53.4,
+      "drift": 0.166,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.686,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.686,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 1,
+          "position": {
+            "x": -1.686,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 2,
+          "position": {
+            "x": 1.686,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.372,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.42200000000000004,
+          "halfHeight": 0.07,
+          "strength": 1.22,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.303,
+          "drift": 0.123,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.686,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.686,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.686,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.686,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Moving freight 23",
+      "difficulty": 23,
+      "timeLimit": 52.8,
+      "drift": 0.169,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.689,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.689,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 2,
+          "position": {
+            "x": 1.689,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 3,
+          "position": {
+            "x": -1.689,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.378,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.42400000000000004,
+          "halfHeight": 0.07,
+          "strength": 1.24,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.306,
+          "drift": 0.126,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.689,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.689,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.689,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.689,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Moving freight 24",
+      "difficulty": 24,
+      "timeLimit": 52.2,
+      "drift": 0.172,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.692,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.692,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 3,
+          "position": {
+            "x": -1.692,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 0,
+          "position": {
+            "x": 1.692,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.384,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.42600000000000005,
+          "halfHeight": 0.07,
+          "strength": 1.26,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.309,
+          "drift": 0.129,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.692,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.692,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.692,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.692,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Moving freight 25",
+      "difficulty": 25,
+      "timeLimit": 51.6,
+      "drift": 0.175,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.695,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.695,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 0,
+          "position": {
+            "x": 1.695,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 1,
+          "position": {
+            "x": -1.695,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.39,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.42800000000000005,
+          "halfHeight": 0.07,
+          "strength": 1.28,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.312,
+          "drift": 0.132,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.695,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.695,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.695,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.695,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Moving freight 26",
+      "difficulty": 26,
+      "timeLimit": 51.0,
+      "drift": 0.178,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.698,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.698,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 1,
+          "position": {
+            "x": -1.698,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 2,
+          "position": {
+            "x": 1.698,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.396,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.43000000000000005,
+          "halfHeight": 0.07,
+          "strength": 1.3,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.315,
+          "drift": 0.135,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.698,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.698,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.698,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.698,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Moving freight 27",
+      "difficulty": 27,
+      "timeLimit": 50.4,
+      "drift": 0.181,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.701,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.701,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 2,
+          "position": {
+            "x": 1.701,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 3,
+          "position": {
+            "x": -1.701,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.402,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.43200000000000005,
+          "halfHeight": 0.07,
+          "strength": 1.32,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.318,
+          "drift": 0.138,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.701,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.701,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.701,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.701,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Moving freight 28",
+      "difficulty": 28,
+      "timeLimit": 49.8,
+      "drift": 0.184,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.704,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.704,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 3,
+          "position": {
+            "x": -1.704,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 0,
+          "position": {
+            "x": 1.704,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.40800000000000003,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.43400000000000005,
+          "halfHeight": 0.07,
+          "strength": 1.34,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.321,
+          "drift": 0.141,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.704,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.704,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.704,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.704,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Moving freight 29",
+      "difficulty": 29,
+      "timeLimit": 49.2,
+      "drift": 0.187,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.707,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.707,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 0,
+          "position": {
+            "x": 1.707,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 1,
+          "position": {
+            "x": -1.707,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.41400000000000003,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.43600000000000005,
+          "halfHeight": 0.07,
+          "strength": 1.3599999999999999,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.324,
+          "drift": 0.144,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.707,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.707,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.707,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.707,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Moving freight 30",
+      "difficulty": 30,
+      "timeLimit": 48.6,
+      "drift": 0.19,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 1,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 2,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.438,
+          "halfHeight": 0.07,
+          "strength": 1.38,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.327,
+          "drift": 0.147,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Gravity circuit 31",
+      "difficulty": 31,
+      "timeLimit": 54.0,
+      "drift": 0.193,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 2,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 3,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 0,
+          "position": {
+            "x": 1.8,
+            "y": -2.2
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.44,
+          "halfHeight": 0.07,
+          "strength": 1.4,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.32999999999999996,
+          "drift": 0.15,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": -0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.35,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": -1.75,
+              "y": 0.15
+            },
+            {
+              "x": -0.9,
+              "y": -1.1
+            },
+            {
+              "x": 0.8,
+              "y": -1.7
+            },
+            {
+              "x": 1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "title": "Gravity circuit 32",
+      "difficulty": 32,
+      "timeLimit": 53.55,
+      "drift": 0.196,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 3,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 0,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 1,
+          "position": {
+            "x": -1.8,
+            "y": -2.2
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.442,
+          "halfHeight": 0.07,
+          "strength": 1.42,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.33299999999999996,
+          "drift": 0.153,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": 0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.362,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": 1.75,
+              "y": 0.15
+            },
+            {
+              "x": 0.9,
+              "y": -1.1
+            },
+            {
+              "x": -0.8,
+              "y": -1.7
+            },
+            {
+              "x": -1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "title": "Gravity circuit 33",
+      "difficulty": 33,
+      "timeLimit": 53.1,
+      "drift": 0.199,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 0,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 1,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 2,
+          "position": {
+            "x": 1.8,
+            "y": -2.2
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.444,
+          "halfHeight": 0.07,
+          "strength": 1.44,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.33599999999999997,
+          "drift": 0.156,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": -0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.374,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": -1.75,
+              "y": 0.15
+            },
+            {
+              "x": -0.9,
+              "y": -1.1
+            },
+            {
+              "x": 0.8,
+              "y": -1.7
+            },
+            {
+              "x": 1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "title": "Gravity circuit 34",
+      "difficulty": 34,
+      "timeLimit": 52.65,
+      "drift": 0.202,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 1,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 2,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 3,
+          "position": {
+            "x": -1.8,
+            "y": -2.2
+          },
+          "unlockAfter": -1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.446,
+          "halfHeight": 0.07,
+          "strength": 1.46,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.33899999999999997,
+          "drift": 0.159,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": 0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.386,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": 1.75,
+              "y": 0.15
+            },
+            {
+              "x": 0.9,
+              "y": -1.1
+            },
+            {
+              "x": -0.8,
+              "y": -1.7
+            },
+            {
+              "x": -1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "title": "Gravity circuit 35",
+      "difficulty": 35,
+      "timeLimit": 52.2,
+      "drift": 0.205,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 2,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 3,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 0,
+          "position": {
+            "x": 1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.448,
+          "halfHeight": 0.07,
+          "strength": 1.48,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.34199999999999997,
+          "drift": 0.162,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": -0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.39799999999999996,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": -1.75,
+              "y": 0.15
+            },
+            {
+              "x": -0.9,
+              "y": -1.1
+            },
+            {
+              "x": 0.8,
+              "y": -1.7
+            },
+            {
+              "x": 1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "title": "Gravity circuit 36",
+      "difficulty": 36,
+      "timeLimit": 51.75,
+      "drift": 0.208,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 3,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 0,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 1,
+          "position": {
+            "x": -1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.45,
+          "halfHeight": 0.07,
+          "strength": 1.5,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.345,
+          "drift": 0.16499999999999998,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": 0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.41,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": 1.75,
+              "y": 0.15
+            },
+            {
+              "x": 0.9,
+              "y": -1.1
+            },
+            {
+              "x": -0.8,
+              "y": -1.7
+            },
+            {
+              "x": -1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "title": "Gravity circuit 37",
+      "difficulty": 37,
+      "timeLimit": 51.3,
+      "drift": 0.211,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 0,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 1,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 2,
+          "position": {
+            "x": 1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.452,
+          "halfHeight": 0.07,
+          "strength": 1.52,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.348,
+          "drift": 0.16799999999999998,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": -0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.422,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": -1.75,
+              "y": 0.15
+            },
+            {
+              "x": -0.9,
+              "y": -1.1
+            },
+            {
+              "x": 0.8,
+              "y": -1.7
+            },
+            {
+              "x": 1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "title": "Gravity circuit 38",
+      "difficulty": 38,
+      "timeLimit": 50.85,
+      "drift": 0.214,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 1,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 2,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 3,
+          "position": {
+            "x": -1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.454,
+          "halfHeight": 0.07,
+          "strength": 1.54,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.351,
+          "drift": 0.17099999999999999,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": 0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.434,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": 1.75,
+              "y": 0.15
+            },
+            {
+              "x": 0.9,
+              "y": -1.1
+            },
+            {
+              "x": -0.8,
+              "y": -1.7
+            },
+            {
+              "x": -1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "title": "Gravity circuit 39",
+      "difficulty": 39,
+      "timeLimit": 50.4,
+      "drift": 0.217,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 2,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 3,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 0,
+          "position": {
+            "x": 1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.456,
+          "halfHeight": 0.07,
+          "strength": 1.56,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.354,
+          "drift": 0.174,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": -0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.44599999999999995,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": -1.75,
+              "y": 0.15
+            },
+            {
+              "x": -0.9,
+              "y": -1.1
+            },
+            {
+              "x": 0.8,
+              "y": -1.7
+            },
+            {
+              "x": 1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "title": "Gravity circuit 40",
+      "difficulty": 40,
+      "timeLimit": 49.95,
+      "drift": 0.22,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 3,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 0,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 1,
+          "position": {
+            "x": -1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.458,
+          "halfHeight": 0.07,
+          "strength": 1.58,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.357,
+          "drift": 0.177,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": 0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.45799999999999996,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": 1.75,
+              "y": 0.15
+            },
+            {
+              "x": 0.9,
+              "y": -1.1
+            },
+            {
+              "x": -0.8,
+              "y": -1.7
+            },
+            {
+              "x": -1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "title": "Deep station 41",
+      "difficulty": 41,
+      "timeLimit": 49.5,
+      "drift": 0.223,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 0,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 1,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 2,
+          "position": {
+            "x": 1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.46,
+          "halfHeight": 0.07,
+          "strength": 1.6,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.36,
+          "drift": 0.18,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": -0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.47,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": -2.6
+          },
+          "radius": 0.5,
+          "strength": 1.0,
+          "halfWidth": 0.5,
+          "halfHeight": 0.07,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": -1.75,
+              "y": 0.15
+            },
+            {
+              "x": -0.9,
+              "y": -1.1
+            },
+            {
+              "x": 0.8,
+              "y": -1.7
+            },
+            {
+              "x": 1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "title": "Deep station 42",
+      "difficulty": 42,
+      "timeLimit": 49.05,
+      "drift": 0.226,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 1,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 2,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 3,
+          "position": {
+            "x": -1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.462,
+          "halfHeight": 0.07,
+          "strength": 1.62,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.363,
+          "drift": 0.183,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": 0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.482,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": -2.6
+          },
+          "radius": 0.5,
+          "strength": 1.05,
+          "halfWidth": 0.5,
+          "halfHeight": 0.07,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": 1.75,
+              "y": 0.15
+            },
+            {
+              "x": 0.9,
+              "y": -1.1
+            },
+            {
+              "x": -0.8,
+              "y": -1.7
+            },
+            {
+              "x": -1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "title": "Deep station 43",
+      "difficulty": 43,
+      "timeLimit": 48.6,
+      "drift": 0.229,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 2,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 3,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 0,
+          "position": {
+            "x": 1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.464,
+          "halfHeight": 0.07,
+          "strength": 1.6400000000000001,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.366,
+          "drift": 0.186,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": -0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.494,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": -2.6
+          },
+          "radius": 0.5,
+          "strength": 1.1,
+          "halfWidth": 0.5,
+          "halfHeight": 0.07,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": -1.75,
+              "y": 0.15
+            },
+            {
+              "x": -0.9,
+              "y": -1.1
+            },
+            {
+              "x": 0.8,
+              "y": -1.7
+            },
+            {
+              "x": 1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "title": "Deep station 44",
+      "difficulty": 44,
+      "timeLimit": 48.15,
+      "drift": 0.232,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 3,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 0,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 1,
+          "position": {
+            "x": -1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.466,
+          "halfHeight": 0.07,
+          "strength": 1.6600000000000001,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.369,
+          "drift": 0.189,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": 0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.506,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": -2.6
+          },
+          "radius": 0.5,
+          "strength": 1.15,
+          "halfWidth": 0.5,
+          "halfHeight": 0.07,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": 1.75,
+              "y": 0.15
+            },
+            {
+              "x": 0.9,
+              "y": -1.1
+            },
+            {
+              "x": -0.8,
+              "y": -1.7
+            },
+            {
+              "x": -1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "title": "Deep station 45",
+      "difficulty": 45,
+      "timeLimit": 47.7,
+      "drift": 0.235,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 0,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 1,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 2,
+          "position": {
+            "x": 1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.468,
+          "halfHeight": 0.07,
+          "strength": 1.6800000000000002,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.372,
+          "drift": 0.192,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": -0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.518,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": -2.6
+          },
+          "radius": 0.5,
+          "strength": 1.2,
+          "halfWidth": 0.5,
+          "halfHeight": 0.07,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": -1.75,
+              "y": 0.15
+            },
+            {
+              "x": -0.9,
+              "y": -1.1
+            },
+            {
+              "x": 0.8,
+              "y": -1.7
+            },
+            {
+              "x": 1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "title": "Deep station 46",
+      "difficulty": 46,
+      "timeLimit": 47.25,
+      "drift": 0.238,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 1,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 2,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 3,
+          "position": {
+            "x": -1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.47000000000000003,
+          "halfHeight": 0.07,
+          "strength": 1.7000000000000002,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.375,
+          "drift": 0.195,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": 0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.53,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": -2.6
+          },
+          "radius": 0.5,
+          "strength": 1.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.07,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": 1.75,
+              "y": 0.15
+            },
+            {
+              "x": 0.9,
+              "y": -1.1
+            },
+            {
+              "x": -0.8,
+              "y": -1.7
+            },
+            {
+              "x": -1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "title": "Deep station 47",
+      "difficulty": 47,
+      "timeLimit": 46.8,
+      "drift": 0.241,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 2,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 3,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 0,
+          "position": {
+            "x": 1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.47200000000000003,
+          "halfHeight": 0.07,
+          "strength": 1.72,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.378,
+          "drift": 0.198,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": -0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.542,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": -2.6
+          },
+          "radius": 0.5,
+          "strength": 1.3,
+          "halfWidth": 0.5,
+          "halfHeight": 0.07,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": -1.75,
+              "y": 0.15
+            },
+            {
+              "x": -0.9,
+              "y": -1.1
+            },
+            {
+              "x": 0.8,
+              "y": -1.7
+            },
+            {
+              "x": 1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "title": "Deep station 48",
+      "difficulty": 48,
+      "timeLimit": 46.35,
+      "drift": 0.244,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 3,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 0,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 1,
+          "position": {
+            "x": -1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.47400000000000003,
+          "halfHeight": 0.07,
+          "strength": 1.74,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.381,
+          "drift": 0.201,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": 0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.554,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": -2.6
+          },
+          "radius": 0.5,
+          "strength": 1.35,
+          "halfWidth": 0.5,
+          "halfHeight": 0.07,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": 1.75,
+              "y": 0.15
+            },
+            {
+              "x": 0.9,
+              "y": -1.1
+            },
+            {
+              "x": -0.8,
+              "y": -1.7
+            },
+            {
+              "x": -1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "title": "Deep station 49",
+      "difficulty": 49,
+      "timeLimit": 45.9,
+      "drift": 0.247,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 0,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 0,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 1,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 2,
+          "position": {
+            "x": 1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.47600000000000003,
+          "halfHeight": 0.07,
+          "strength": 1.76,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.384,
+          "drift": 0.20400000000000001,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": -0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.566,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": -2.6
+          },
+          "radius": 0.5,
+          "strength": 1.4,
+          "halfWidth": 0.5,
+          "halfHeight": 0.07,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": -1.75,
+              "y": 0.15
+            },
+            {
+              "x": -0.9,
+              "y": -1.1
+            },
+            {
+              "x": 0.8,
+              "y": -1.7
+            },
+            {
+              "x": 1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "title": "Deep station 50",
+      "difficulty": 50,
+      "timeLimit": 45.45,
+      "drift": 0.25,
+      "maxPathLength": 6,
+      "cargo": [
+        {
+          "color": 1,
+          "spawn": {
+            "x": 1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 2,
+          "spawn": {
+            "x": -1.71,
+            "y": -1.5
+          }
+        },
+        {
+          "color": 3,
+          "spawn": {
+            "x": 1.75,
+            "y": 0.15
+          }
+        }
+      ],
+      "bays": [
+        {
+          "color": 1,
+          "position": {
+            "x": -1.71,
+            "y": 1.5
+          },
+          "unlockAfter": -1
+        },
+        {
+          "color": 2,
+          "position": {
+            "x": 1.71,
+            "y": 1.5
+          },
+          "unlockAfter": 0
+        },
+        {
+          "color": 3,
+          "position": {
+            "x": -1.8,
+            "y": -2.2
+          },
+          "unlockAfter": 1
+        }
+      ],
+      "hazards": [
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 0.07
+          },
+          "radius": 0.42,
+          "drift": 0,
+          "driftSpeed": 0.5,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": 1.0
+          },
+          "radius": 0.65,
+          "halfWidth": 0.47800000000000004,
+          "halfHeight": 0.07,
+          "strength": 1.78,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 0,
+          "position": {
+            "x": 0,
+            "y": 2.7
+          },
+          "radius": 0.387,
+          "drift": 0.20700000000000002,
+          "driftSpeed": 0.25,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "strength": 0
+        },
+        {
+          "kind": 2,
+          "position": {
+            "x": 0.3,
+            "y": 0.7
+          },
+          "radius": 1.3,
+          "strength": 0.578,
+          "halfWidth": 0.5,
+          "halfHeight": 0.08,
+          "drift": 0,
+          "driftSpeed": 0
+        },
+        {
+          "kind": 1,
+          "position": {
+            "x": 0,
+            "y": -2.6
+          },
+          "radius": 0.5,
+          "strength": 1.45,
+          "halfWidth": 0.5,
+          "halfHeight": 0.07,
+          "drift": 0,
+          "driftSpeed": 0
+        }
+      ],
+      "solutions": [
+        {
+          "cargo": 0,
+          "points": [
+            {
+              "x": 1.71,
+              "y": -1.5
+            },
+            {
+              "x": 0.3,
+              "y": -1.5
+            },
+            {
+              "x": -1.0,
+              "y": -0.5
+            },
+            {
+              "x": -1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 1,
+          "points": [
+            {
+              "x": -1.71,
+              "y": -1.5
+            },
+            {
+              "x": -0.3,
+              "y": -1.5
+            },
+            {
+              "x": 1.0,
+              "y": -0.5
+            },
+            {
+              "x": 1.71,
+              "y": 1.5
+            }
+          ]
+        },
+        {
+          "cargo": 2,
+          "points": [
+            {
+              "x": 1.75,
+              "y": 0.15
+            },
+            {
+              "x": 0.9,
+              "y": -1.1
+            },
+            {
+              "x": -0.8,
+              "y": -1.7
+            },
+            {
+              "x": -1.8,
+              "y": -2.2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
