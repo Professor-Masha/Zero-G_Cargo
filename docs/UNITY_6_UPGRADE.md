@@ -23,6 +23,7 @@ If upgrading an existing checkout causes stale package errors, close Unity and f
 - uGUI: 1.0.0 → **2.6.0**, as declared on Unity's official `6000.6` uGUI branch. This includes TMP; the standalone `com.unity.textmeshpro` dependency is removed.
 - The unused legacy Unity Test Framework dependency is removed. This project currently uses the .NET console test runner and has no Unity test assemblies.
 - Font preparation uses TMP's package locator and the current package import API, rather than hard-coding the removed standalone package directory.
+- The minimum Android version is **Android 8.0 / API 26**, required by Unity 6.6. This replaces the original specifications’ Android 7.0 / API 24 baseline.
 - Android identifiers/backend selection use `NamedBuildTarget.Android`. Preparation explicitly retains the legacy Input Manager required by existing input/UI code.
 - Gameplay assets, scene GUIDs, simulation formulas and local-save schema are preserved. Unity-generated renderer/font assets from an earlier laptop import should be allowed to upgrade normally; preparation preserves existing assets.
 

@@ -29,7 +29,7 @@ On Linux/macOS, `./scripts/test-core.sh` runs the same checks. The console runne
 
 ## Android development build
 
-In Unity Hub, install **Android Build Support**, including **Android SDK & NDK Tools** and **OpenJDK**, for this editor version. Switch the active platform to Android in **File → Build Profiles**, then run **Zero-G Cargo → Build Android development APK**. Output: `Builds/ZeroGCargo-dev.apk` (debug signing; ignored by Git). Install on a USB-debugging-enabled device and follow the smoke checks in [validation](docs/VALIDATION.md).
+Android builds require **Android 8.0 (API 26) or newer**. In Unity Hub, install **Android Build Support**, including **Android SDK & NDK Tools** and **OpenJDK**, for this editor version. Switch the active platform to Android in **File → Build Profiles**, then run **Zero-G Cargo → Build Android development APK**. Output: `Builds/ZeroGCargo-dev.apk` (debug signing; ignored by Git). Install on a USB-debugging-enabled device and follow the smoke checks in [validation](docs/VALIDATION.md).
 
 This development APK is not a signed Google Play AAB. Release signing, Play Console setup and performance validation remain future work. Never commit keystores or passwords.
 
