@@ -120,12 +120,27 @@ namespace ZeroGCargo.Editor
             settings.ApplyModifiedPropertiesWithoutUndo();
             Debug.LogWarning("Active Input Handling changed to Input Manager (Old). Restart Unity before pressing Play or building.");
         }
+        private static void EnsureBuildReady()
+        {
+            if (EditorApplication.isPlayingOrWillChangePlaymode)
+                throw new System.InvalidOperationException("Stop Play mode before building the APK.");
+            if (BuildPipeline.isBuildingPlayer)
+                throw new System.InvalidOperationException("A player build is already running. Wait for it to finish.");
+            if (EditorUserBuildSettings.activeBuildTarget != BuildTarget.Android)
+                throw new System.InvalidOperationException("Switch to Android in File > Build Profiles, then wait for imports and compilation to finish.");
+            if (EditorApplication.isCompiling || EditorApplication.isUpdating || ShaderUtil.anythingCompiling)
+                throw new System.InvalidOperationException("Unity is still importing assets or compiling scripts/shaders. Wait for Background Tasks to finish before building. If the Console reports Out of memory, close other applications and restart Unity first.");
+            if (EditorUtility.scriptCompilationFailed)
+                throw new System.InvalidOperationException("Unity reports script compilation errors. Resolve the first compiler error in the Console before building the APK.");
+        }
         /// <summary>Builds an installable test APK without development/debug-player features.</summary>
         [MenuItem("Zero-G Cargo/Build phone test APK")]
         public static void BuildPhoneTest()
         {
+            EnsureBuildReady();
             if (Resources.Load<TMP_Settings>("TMP Settings") == null) throw new System.InvalidOperationException("Open Unity and run Prepare game once before using the APK build command.");
             Prepare(); Directory.CreateDirectory("Builds"); EditorUserBuildSettings.buildAppBundle = false;
+            EnsureBuildReady();
             PlayerSettings.Android.useCustomKeystore = false;
             BuildReport report = BuildPipeline.BuildPlayer(Scenes,"Builds/ZeroGCargo-phone-test.apk",BuildTarget.Android,BuildOptions.None);
             if (report.summary.result != BuildResult.Succeeded) throw new System.Exception("Phone APK build failed: " + report.summary.result);
@@ -135,7 +150,9 @@ namespace ZeroGCargo.Editor
         [MenuItem("Zero-G Cargo/Build Android development APK")]
         public static void BuildAndroid()
         {
+            EnsureBuildReady();
             Prepare(); Directory.CreateDirectory("Builds"); EditorUserBuildSettings.buildAppBundle = false;
+            EnsureBuildReady();
             BuildReport report = BuildPipeline.BuildPlayer(Scenes, "Builds/ZeroGCargo-dev.apk", BuildTarget.Android, BuildOptions.Development);
             if (report.summary.result != BuildResult.Succeeded) throw new System.Exception("Android development build failed: " + report.summary.result);
         }

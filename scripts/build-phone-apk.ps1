@@ -1,5 +1,6 @@
 param(
-    [string]$UnityEditor = "C:\Program Files\Unity\Hub\Editor\6000.6.7f1\Editor\Unity.exe"
+    [string]$UnityEditor = "C:\Program Files\Unity\Hub\Editor\6000.6.7f1\Editor\Unity.exe",
+    [ValidateRange(1, 64)][int]$JobWorkers = 2
 )
 $ErrorActionPreference = "Stop"
 $ProjectRoot = Split-Path $PSScriptRoot -Parent
@@ -8,7 +9,7 @@ $BuildDirectory = Join-Path $ProjectRoot "Builds"
 New-Item -ItemType Directory -Path $BuildDirectory -Force | Out-Null
 $LogFile = Join-Path $BuildDirectory "phone-build.log"
 # Close this project in the interactive Editor first. Hub must have an active licence.
-$Arguments = @("-batchmode", "-quit", "-projectPath", "`"$ProjectRoot`"", "-buildTarget", "Android", "-executeMethod", "ZeroGCargo.Editor.ProjectSetup.BuildPhoneTest", "-logFile", "`"$LogFile`"")
+$Arguments = @("-batchmode", "-nographics", "-job-worker-count", "$JobWorkers", "-quit", "-projectPath", "`"$ProjectRoot`"", "-buildTarget", "Android", "-executeMethod", "ZeroGCargo.Editor.ProjectSetup.BuildPhoneTest", "-logFile", "`"$LogFile`"")
 $BuildStarted = (Get-Date).ToUniversalTime()
 $Process = Start-Process -FilePath $UnityEditor -ArgumentList $Arguments -Wait -PassThru
 if ($Process.ExitCode -ne 0) { throw "Unity build failed ($($Process.ExitCode)). See $LogFile" }

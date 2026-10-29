@@ -32,7 +32,9 @@ Alternatively, close the project in Unity and run the Windows build script from 
 .\scripts\build-phone-apk.ps1
 ```
 
-The script checks Unity's exit status, requires an actual APK file and prints its SHA-256. Logs go to `Builds/phone-build.log`. This APK uses Android's development signing key but disables Unity's development-player features. It is for testing, not a Play Store release. If an older APK with another signing key is already installed, Android may refuse the update; preserve any wanted save data before uninstalling.
+The script runs without the editor graphics window and limits Unity job workers to two to reduce concurrent work; this does not cap every shader/compiler process or guarantee a low-memory build. It checks Unity's exit status, requires an actual APK file and prints its SHA-256. Logs go to `Builds/phone-build.log`. This APK uses Android's development signing key but disables Unity's development-player features. It is for testing, not a Play Store release. If an older APK with another signing key is already installed, Android may refuse the update; preserve any wanted save data before uninstalling.
+
+If Unity reports **Out of memory**, follow [the build-memory troubleshooting steps](docs/BUILD_MEMORY.md) before retrying.
 
 ## What is included
 
